@@ -1,0 +1,11 @@
+.js-scroll {
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(20px);
+}
+   
+.js-scroll.scrolled {
+    opacity: 1;
+    transition: 0.5s;
+    transform: translateY(0px);
+}

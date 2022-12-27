@@ -1,0 +1,31 @@
+.coin1{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(255, 179, 0);
+
+    position: fixed;
+    transform: translate(-20%, -20%);
+    z-index: 0;
+
+    border-radius: 50%;
+    /* animation: pound 50s infinite normal; */
+}
+
+@keyframes pound {
+    50%{transform: translate(200%, 100%);}
+}
+
+.coin2{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 102, 255);
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 0;
+
+    border-radius: 50%;
+    /* animation: pound 50s infinite normal; */
+}
+

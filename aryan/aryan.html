@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="https://gt6192.github.io/Hardinfohub_style_sheet/hardinfohub_templets2.css">
+	<style>
+		.container{
+			width: 95%;
+			margin: auto;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		#tab{
+			width: 100%;
+		}
+		#tab th{
+			padding: 10px;
+		}
+		#tab td{
+			padding: 0px;
+		}
+		#tab input{
+			padding: 10px;
+			border: 0;
+			width: 100%;
+			box-sizing: border-box;
+			background: transparent;
+		}
+		#tab input:focus{
+			outline: 0;
+		}
+		.butdiv{
+			margin-top: 20px;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			width: 95%;
+			margin: 10px 20px 10px 20px;
+		}
+		.butdiv button{
+			margin: 2px;
+			padding: 10px 20px;
+			color: black;
+			background-color: skyblue;
+			border: 0;
+		}
+		#datatab{
+			width: 100%;
+			border-collapse: collapse;
+		}
+		#datatab td{
+			padding: 0;
+		}
+		#datatab input{
+			border: 0;
+			border-bottom: 1.5px solid grey;
+			padding: 10px;
+			width: 90%;
+			margin: auto;
+			box-sizing: border-box;
+		}
+		#datatab input:focus{
+			outline: 0;
+		}
+		.datadiv{
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<h1>Bhai ka banaya hua Fadu project</h1>
+	<table id="tab" class="gt-tab-style1-green">
+	<thead>
+		<tr>
+			<th>Roll no.</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Sex</th>
+		</tr>
+	</thead>
+	<tbody id="tabbod">
+	</tbody>
+	</table>
+
+	<div class="butdiv">
+		<div class="datadiv">
+			<table id="datatab">
+				<!-- <tr>
+					<th>Roll no</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Sex</th>
+				</tr> -->
+				<tr>
+					<td>
+						<input type="text" id="d1" placeholder="Roll no">
+					</td>
+					<td>
+						<input type="text" id="d2" placeholder="Name">
+					</td>
+					<td>
+						<input type="text" id="d3" placeholder="Age">
+					</td>
+					<td>
+						<input type="text" id="d4" placeholder="Sex">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<button id="bt">Add row at Top</button>
+		<button id="bb">Add row at Bottom</button>
+	</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("bt").addEventListener("click", addTop);
+		document.getElementById("bb").addEventListener("click", addBottom);
+		
+		function addTop()
+		{
+			var t = document.getElementById("tabbod");
+			var d1 = document.getElementById("d1").value;
+			var d2 = document.getElementById("d2").value;
+			var d3 = document.getElementById("d3").value;
+			var d4 = document.getElementById("d4").value;
+			var tr = document.createElement("tr");
+			tr.innerHTML = "<td><input type='text' value='"+d1+"'></td><td><input type='text' value='"+d2+"'></td><td><input type='text' value='"+d3+"'></td><td><input type='text' value='"+d4+"'></td>";
+			t.prepend(tr);
+			
+			var d1 = document.getElementById("d1").value="";
+			var d2 = document.getElementById("d2").value="";
+			var d3 = document.getElementById("d3").value="";
+			var d4 = document.getElementById("d4").value="";
+		}
+		
+		function addBottom()
+		{
+			var t = document.getElementById("tabbod");
+			var d1 = document.getElementById("d1").value;
+			var d2 = document.getElementById("d2").value;
+			var d3 = document.getElementById("d3").value;
+			var d4 = document.getElementById("d4").value;
+			var tr = document.createElement("tr");
+			tr.innerHTML = "<td><input type='text' value='"+d1+"'></td><td><input type='text' value='"+d2+"'></td><td><input type='text' value='"+d3+"'></td><td><input type='text' value='"+d4+"'></td>";
+			t.append(tr);
+			
+			var d1 = document.getElementById("d1").value="";
+			var d2 = document.getElementById("d2").value="";
+			var d3 = document.getElementById("d3").value="";
+			var d4 = document.getElementById("d4").value="";
+		}
+	</script>
+</body>
+</html>
